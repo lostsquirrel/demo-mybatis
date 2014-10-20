@@ -1,0 +1,84 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.soulagou</groupId>
+	<artifactId>demo-mybatis</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<repositories>
+		<repository>
+			<id>3rd Party</id>
+			<name>3rd Party Repository</name>
+			<url>http://tmp.soulagou.com:8081/nexus/content/repositories/thirdparty</url>
+		</repository>
+
+		<repository>
+			<id>maven2</id>
+			<name>maven2</name>
+			<url>http://repo1.maven.org/maven2/</url>
+		</repository>
+
+		<repository>
+			<id>spring-milestone</id>
+			<name>Spring Maven SNAPSHOT Repository</name>
+			<url>http://repo.spring.io/release</url>
+		</repository>
+
+		<repository>
+			<id>EclipseLink Repo</id>
+			<url>http://download.eclipse.org/rt/eclipselink/maven.repo</url>
+			<name>EclipseLink Repo</name>
+		</repository>
+	</repositories>
+	<dependencies>
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis</artifactId>
+			<version>3.2.7</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.11</version>
+		</dependency>
+		<dependency>
+			<groupId>postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>9.1-901.jdbc4</version>
+		</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-dbcp</groupId>
+			<artifactId>commons-dbcp</artifactId>
+			<version>1.4</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-logging</groupId>
+			<artifactId>commons-logging</artifactId>
+			<version>1.1.1</version>
+			<type>pom.lastUpdated</type>
+		</dependency>
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>2.6</version>
+			</plugin>
+
+		</plugins>
+	</build>
+</project>

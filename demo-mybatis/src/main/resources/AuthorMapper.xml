@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.soulagou.mybatis.AuthorMapper">
+
+	<resultMap id="author" type="Author">
+		<id property="id" column="id" />
+		<result property="name" column="name" />
+		<result property="brief" column="brief" />
+		<result property="version" column="version" />
+	</resultMap>
+
+	<insert id="insertAuthor" parameterType="Author"  useGeneratedKeys="true" keyProperty="id">
+		insert into author
+		(name,brief)
+		values (#{name},#{brief})
+	</insert>
+	
+	<update id="updateAuthor"  parameterType="Author">
+		update author set
+		name = #{name},
+		brief = #{brief},
+		version = now()
+		where id = #{id}
+	</update>
+
+	<delete id="deleteAuthor"  parameterType="long">
+		delete from author where id = #{id}
+	</delete>
+
+	<select id="selectAuthor" resultType="Author" parameterType="long">
+		select * from author where id = #{id}
+	</select>
+
+</mapper>
